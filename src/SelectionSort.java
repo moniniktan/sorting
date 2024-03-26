@@ -11,7 +11,7 @@ public class SelectionSort extends JPanel {
 		array = new int[6];
 		Random rand = new Random();
 		for (int i = 0; i < 6; i++) {
-			array[i] = rand.nextInt(6);
+			array[i] = rand.nextInt(5) + 1;
 		}
 		img = new ImageIcon("resources/circle.png").getImage();
 	}
@@ -26,6 +26,8 @@ public class SelectionSort extends JPanel {
 				repaint();
 				try {
 					Thread.sleep(DELAY);
+					super.repaint();
+					repaint();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -44,7 +46,7 @@ public class SelectionSort extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		for(int i = 0; i < 6; i++) {
-			g.drawImage(img, 50 * (i + 1), 400, array[i] * 10, array[i] * 10, null);
+			g.drawImage(img, 200 * (i + 1), 300, array[i] * 40, array[i] * 40, null);
 		}
 	}
 }
