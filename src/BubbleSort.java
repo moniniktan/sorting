@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class BubbleSort extends JPanel {
 	private final int[] array;
-	private static final int DELAY = 50;
+	private static final int DELAY = 100;
 	private final Image img;
 
 	public BubbleSort() {
@@ -24,9 +24,10 @@ public class BubbleSort extends JPanel {
 					array[i] = array[i + 1];
 					array[i + 1] = temp;
 				}
-				repaint();
 				try {
 					Thread.sleep(DELAY);
+					super.repaint();
+					repaint();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
